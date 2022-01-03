@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.send('vaccines shop is running ...')
 })
 
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }).catch(err => console.log(err))
 
 const PORT = process.env.PORT || 3030
 app.listen(PORT, () => {
